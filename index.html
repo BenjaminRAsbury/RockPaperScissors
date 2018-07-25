@@ -9,9 +9,9 @@
 		let cScore = 0
 		let tScore = 0
 
-		let playerSelect = prompt('Choose your weapon! ROCK, PAPER, or SCISSORS?')
-		let playerSelection = playerSelect.toUpperCase();
+		
 		const computerSelection = computerPlay()
+		console.log(playRound())
 
 		function computerPlay() {
 			var choices = ['ROCK', 'PAPER', 'SCISSORS']
@@ -19,7 +19,9 @@
 			return choices[rand]
 		}
 
-		function singleRound(playerSelection, computerSelection) {
+		function playRound() {
+        let playerSelect = prompt('Choose your weapon! ROCK, PAPER, or SCISSORS?')
+		let playerSelection = playerSelect.toUpperCase();
 
 			if (playerSelection === computerSelection) {
 				tScore++;
@@ -47,7 +49,20 @@
 			}
 		}
 
-		
+		function game() {
+			console.log(playRound());
+			console.log(playRound());
+			console.log(playRound());
+			console.log(playRound());
+			console.log(playRound());
+			if (pScore > cScore) {
+				alert('You are the grand champion! Congratulations on victory over the machines!')
+			} else if (pScore < cScore) {
+				alert('Your loss has doomed humanity.  Good going.')
+			} else {
+				alert('Neither a winner or a loser.  You just... are.')
+			}
+		}
 
 
 	</script>
